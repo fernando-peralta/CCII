@@ -29,14 +29,18 @@ void Imprimir_matriz(int m[3][3]){
 }
 
 void transpuesta(int m[][3]){
+    int aux=0;
 
-    for (int (*p)[3]=m; p < (m+2); p++)
+    for (int (*p)[3]=m; p < (m+3); p++)
     {
         for (int *q=*p; q < *(p+1); q++)
         {
-            cout<<*q;
+            if (q!=(*p)+aux)
+            {
+                *q=0;
+            }
         }
-        
+        aux++;
     }
     
     
